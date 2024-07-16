@@ -1,13 +1,13 @@
-//Task 3
-let sum=0;
-let i=0
-while(i<=5){
-    sum+=i
-    i++;}
+//Task 5
+let i=1
+do {
+    console.log(i);
+    i++
+} while (i<=5);
 
-console.log(sum);
 
-//Task 4
+
+//Task 6
 
 let fact=1
 let num=5
