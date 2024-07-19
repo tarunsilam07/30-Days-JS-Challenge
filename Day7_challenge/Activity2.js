@@ -7,6 +7,7 @@ my_book={
     print:function(){
         console.log(`The title of the book is ${my_book.title}`);
         console.log(`The author of the book is ${my_book.author}`);
+        console.log(...my_book.title," ",...my_book.author);
     },
     update:function(newyear){
         my_book.year=newyear
