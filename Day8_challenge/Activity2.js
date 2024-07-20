@@ -1,18 +1,17 @@
 //Task 3
 
-let array=["Dhoni","Kohli","Rohit","Raina"]
+let array=[7,18,45]
 
-let [finisher,opener1,opener2,middle]=array
-console.log(opener1,opener2);
+let [first,second,third]=array
+console.log(first,second);
 
 // Task 4
 
-let obj={
-    name:"Dhoni",
-    age:43,
-    role:"Finisher"
+let book={
+    title:"Rich Dad Poor Dad",
+    author:"Robert",
+    year:1997
 }
 
-const {name,age,role}=obj
-console.log(name);
-console.log(role);
+const {title,author,year}=book
+console.log(`The title of the book is ${title} and the author is ${author}`);
