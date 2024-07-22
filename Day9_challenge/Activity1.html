@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM learning</title>
+  </head>
+  <body>
+    <div class="black">
+      <h1 class="heading">DOM learning</h1>
+      <p id="title"> Lorem ipsum dolor, sit amet</p>
+      <ul>
+        <li class="assam" id="changeid">one</li>
+        <li class="assam">two</li>
+        <li class="assam">three</li>
+        <li class="assam">four</li>
+      </ul>
+    </div>
+    <script>
+      // Task 1: Change the content of the element with id "changeid"
+      const toChange = document.getElementById("changeid");
+      toChange.innerHTML = "Seven";
+
+      // Task 2: Change the color of all elements with class "assam"
+      const changeColor = document.getElementsByClassName("assam");
+      for (let i = 0; i < changeColor.length; i++) {
+        changeColor[i].style.color = "red";
+      }
+    </script>
+  </body>
+</html>
