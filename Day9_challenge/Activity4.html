@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM learning</title>
+    <style>
+        .red{
+            color:rgb(228, 16, 16)
+        }
+        .title{
+            color: blue;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="black">
+      <h1 id="heading">DOM learning</h1>
+      <p class="title" id="mg"> Lorem ipsum dolor, sit amet</p>
+      <ul class="list">
+        <li class="assam" id="changeid">one</li>
+        <li class="assam">two</li>
+        <li class="assam">three</li>
+        <li class="assam">four</li>
+      </ul>
+      <img src="tech.jpg" id="image">
+    </div>
+    <script>
+
+        //Task 7
+      const image=document.getElementById('image')
+      image.setAttribute("src","1460629.jpg")
+
+      //Task 8
+        const add=document.getElementById('heading')
+        add.classList.add('red')
+
+        const del=document.getElementById('mg')
+        del.classList.remove('title')      
+    </script>
+  </body>
+</html>
