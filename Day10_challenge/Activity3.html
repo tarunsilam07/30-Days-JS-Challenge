@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Key down and Keyup Event</title>
+    <script>
+        //Task 6
+       keyupEvent=(event)=>{
+            setTimeout(()=>{
+            console.log("Key released: " + event.key);
+            },1000)
+        }
+
+        window.onload = function() {
+            document.getElementById("inputField").addEventListener("keyup",keyupEvent);
+            document.getElementById("inputField").addEventListener("keydown",keydownEvent);
+        };
+        //Task 5
+         keydownEvent=(event)=>{
+            
+             console.log("Key pressed : ",event.key);
+         }
+
+    </script>
+</head>
+<body>
+    <input type="text" id="inputField" placeholder="Type something...">
+</body>
+</html>
