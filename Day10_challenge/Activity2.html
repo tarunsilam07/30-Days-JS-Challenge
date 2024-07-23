@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM learning</title>
+    <style>
+        .black{
+            background-color: #fff;
+            color:black;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="black">
+      <h1 class="heading">DOM learning</h1>
+      <p id="title"> Lorem ipsum dolor, sit amet</p>
+      <ul id="list">
+        <li class="assam" >one</li>
+        <li class="assam" id="changeid">two</li>
+        <li class="assam">three</li>
+        <li class="assam">four</li>
+      </ul>
+    </div>
+    <script>
+      //Task 3
+        const divi=document.querySelector('.black')
+        divi.addEventListener('mouseover',()=>{
+            divi.style.backgroundColor="#2f2f2f"
+            divi.style.color="#fff"
+        })
+        //Task 4
+        divi.addEventListener('mouseout',()=>{
+            divi.style.backgroundColor="#fff"
+            divi.style.color="#000"
+        })
+    </script>
+  </body>
+</html>
