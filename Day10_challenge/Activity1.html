@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM learning</title>
+    <style>
+        .hidden {
+          display: none;
+        }
+        </style>
+  </head>
+  <body>
+    <div class="black">
+        
+      <h1 class="heading">DOM learning</h1>
+      <p id="title"> Lorem ipsum dolor, sit amet</p>
+      <ul>
+        <li class="assam" id="changeid">one</li>
+        <li class="assam">two</li>
+        <li class="assam">three</li>
+        <li class="assam">four</li>
+      </ul>
+    </div>
+    <button class="changetext">Text changer</button>
+    <img src="1460629.jpg" class="images">
+    <button class="toggle">toggle </button>
+    <script>
+      // Task 1: Change the content of a paragraph
+      const changetext=document.querySelector(".changetext")
+      const para=document.querySelector("#title")
+      flag=0;
+      changetext.addEventListener('click',()=>{
+        if(flag==0){
+            para.innerHTML="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad blanditiis distinctio officia error magnam dolorem suscipit, fugit quis reiciendis! Enim!"
+            flag=1
+        }
+        else if(flag==1)
+        {
+            para.innerHTML="Lorem ipsum dolor, sit amet"
+            flag=0
+        }  
+      })
+      // Task 2
+      const toggle=document.querySelector(".toggle")
+      const images=document.querySelector('.images')
+      toggle.addEventListener('dblclick',()=>{
+        if(images.classList.contains("hidden")){
+        images.classList.remove("hidden")}
+        else {
+            images.classList.add("hidden")
+        }
+      })
+
+    </script>
+  </body>
+</html>
