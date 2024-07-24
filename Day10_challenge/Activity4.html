@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1024"/>
+    <title>Payment Form</title>
+    <!-- <link rel="stylesheet" href="stylepayment.css" /> -->
+  </head>
+  <body>
+    <form class="form">
+      <div class="container">
+        <h1 class="Mainheading">Payment Form</h1>
+        <h2 class="subheading">Contact details</h2>
+        <p>Name <br /><input type="text" name="name" id="name" required /></p>
+        <fieldset>
+          <legend>Gender</legend>
+          Male <input type="radio" name="gender" id="male" required /> &nbsp;
+          Female<input type="radio" name="gender" id="female" required />
+        </fieldset>
+        <p>
+          Email <br /><input type="email" name="email" id="email" required />
+        </p>
+        <p>
+          Address
+          <textarea 
+            cols="100%"
+            rows="8"
+            name="address"
+            id="address"
+            required 
+          ></textarea>
+        </p>
+        <p>
+          Pincode <br /><input type="number" name="pin" id="pin" required />
+        </p>
+        <p>
+          Phone Number <br /><input
+            type="number"
+            name="phn"
+            id="phn"
+            required
+          />
+        </p>
+        <h2 class="subheading">Payment Details</h2>
+        <p>
+          Card type <br /><select name="card" id="card" required>
+            <option value="">please select a card</option>
+            <option value="rupay">Rupay</option>
+            <option value="visa">Visa</option>
+            <option value="master">Master</option>
+          </select>
+        </p>
+        <p>
+          Enter card number <br /><input
+            type="number"
+            name="cardnumber"
+            id="cardnumber"
+            required
+          />
+        </p>
+        <p>
+          Enter CVV <br /><input
+            type="password"
+            name="password"
+            id="password"
+            required
+          />
+        </p>
+        <p>
+          Card Expiration<br />
+          <input type="date" />
+        </p>
+        <p class="data"></p>
+        <p><input type="submit" name="paynow" id="paynow" value="Paynow" /></p>
+      </div>
+    </form>
+    <script>
+        const form=document.querySelector('.form');
+        const control=document.querySelector("#paynow")
+        control.addEventListener('click',(event)=>{
+            event.preventDefault();
+            const name=form.name.value;
+            const email=form.email.value;
+            const number=form.phn.value;
+            console.log(`The name of the user is ${name}`);
+            console.log(`The email of the user is ${email}`);
+            console.log(`The number of the user is ${number}`);
+        })
+
+        const select=document.querySelector('#select')
+        const para=document.querySelector(".data")
+        select.addEventListener('change',()=>{
+            const val=select.value;
+            para.textContent=`You have selected ${val}`
+        })
+    </script>
+  </body>
+</html>
