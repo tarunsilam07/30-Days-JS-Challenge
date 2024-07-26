@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+</head>
+<body>
+    <div id="parent">
+        <!-- Existing child elements -->
+        <button class="child">Child 1</button>
+        <button class="child">Child 2</button>
+    </div>
+
+    <!-- Button to add new child elements dynamically -->
+    <button id="add-child">Add Child</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    // Get the parent element
+    const parent = document.getElementById("parent");
+
+    // Add event listener to the parent element
+    parent.addEventListener("click", (event) => {
+        // Check if the clicked element has the class 'child'
+        if (event.target && event.target.classList.contains("child")) {
+            console.log(`Child element clicked: ${event.target.textContent}`);
+        }
+    });
+
+    // Add functionality to dynamically add child elements
+    const addChildButton = document.getElementById("add-child");
+    let childCount = 2;
+
+    addChildButton.addEventListener("click", () => {
+        childCount++;
+        const newChild = document.createElement("button");
+        newChild.className = "child";
+        newChild.textContent = `Child ${childCount}`;
+        parent.appendChild(newChild);
+    });
+});
+
+    </script>
+</body>
+</html>
