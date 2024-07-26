@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+    <style>
+        *{
+            background-color: #2f2f2f;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const call=()=>{
+            return new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    resolve("The data is fetched")
+                },5000)
+            })
+        }
+
+        async function waiting(){
+            try{
+                const res= await call();
+                console.log(res);
+            }
+            catch(error){
+                console.error(error);
+            }
+        }
+        waiting();
+    </script>
+</body>
+</html>
