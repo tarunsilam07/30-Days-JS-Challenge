@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <style>
+        *{
+            background-color: #2f2f2f;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const validation=(name="",id)=>{
+            if(name==""){
+                throw new Error("Validation Failed")
+            }
+            if(id<37){
+                throw new Error("Id doesnt exist in the server")
+            }
+            else {
+                console.log("Validation Successfull !! Welcome",name);
+            }
+        }
+
+        function handler(){
+            try{
+                validation("",47);
+            }
+            catch(error){
+                console.error("Error Generated:",error.message);
+            }
+        }
+        handler()
+    </script>
+</body>
+</html>
