@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        #items{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="items">
+        <li>Dhoni</li>
+        <li>Kohli</li>
+        <li>Rohit</li>
+        <li>Rutu</li>
+    </ul>
+    <script>
+        const items=document.querySelector('#items')
+        items.addEventListener('click',function(event){
+            if(event.target && event.target.nodeName==='LI'){
+                console.log("The name of the cricketer is ",event.target.textContent);
+            }
+        })
+    </script>
+</body>
+</html>
