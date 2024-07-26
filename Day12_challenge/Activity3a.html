@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+    <style>
+        *{
+            background-color: #2f2f2f;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Custom error class
+        class CustomError extends Error {
+            constructor(message) {
+                super(message);
+                this.name = "CustomError";
+            }
+        }
+
+        function functionThatThrowsCustomError() {
+            throw new CustomError("This is a custom error");
+        }
+
+        function main() {
+            try {
+                functionThatThrowsCustomError();
+            } catch (error) {
+                if (error instanceof CustomError) {
+                    console.error(`A custom error occurred: ${error.message}`);
+                } else {
+                    console.error(`An unknown error occurred: ${error.message}`);
+                }
+            }
+        }
+
+        main();
+
+    </script>
+</body>
+</html>
