@@ -1,13 +1,12 @@
 {
-    "name": "your_project",
-    "version": "1.0.0",
-    "description": "",
-    "main": "Activity2bb.js",
-    "type": "module",
-    "scripts": {
-      "start": "node Activity2bb.js"
-    },
-    "dependencies": {},
-    "liveServer.settings.port": 5503
-  }
-  
+  "name": "your_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Activity3b.js",
+  "type": "module",
+  "scripts": {
+    "start": "node Activity3b.js"
+  },
+  "dependencies": {},
+  "liveServer.settings.port": 5503
+}
