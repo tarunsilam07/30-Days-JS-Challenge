@@ -38,5 +38,36 @@ function SelectionSort(arr=[]){
 my_arr=[3,2,1,7,8,4];
 console.log(SelectionSort(my_arr));
 
+// Task 3 Quick Sort
+
+function quickSort(arr) {
+    if (arr.length <= 1) {
+        return arr; 
+    }
+
+    let pivot = arr[Math.floor(arr.length / 2)];
+    let left = [];
+    let right = [];
+    let equal = [];
+
+    for (let element of arr) {
+        if (element < pivot) {
+            left.push(element);
+        } else if (element > pivot) {
+            right.push(element);
+        } else {
+            equal.push(element);
+        }
+    }
+
+    // Recursively sort left and right arrays, then concatenate them with equal array
+    return [...quickSort(left), ...equal, ...quickSort(right)];
+}
+
+// Example usage:
+let myArr = [3, 6, 8, 10, 1, 2, 1];
+console.log(quickSort(myArr)); 
+
+
 
 
