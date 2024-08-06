@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <p>Saving and retrieving string data</p>
+    <script>
+        // Task 1
+        localStorage.setItem('user','Tarun');
+        const username=localStorage.getItem('user');
+        console.log(username);
+
+        const my_object={
+            name:"Tarun",
+            Branch:"Iot",
+            Rollno:52,
+            email:"tarun79767@gmail.com"
+        }
+        localStorage.setItem('my_object',JSON.stringify(my_object));
+        const data=JSON.parse(localStorage.getItem('my_object'));
+        console.log(data);
+    </script>
+</body>
+</html>
