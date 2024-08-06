@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <p>Saving and retrieving string data</p>
+    <script>
+        // Task 5
+        sessionStorage.setItem('user','Tarun');
+        const username=sessionStorage.getItem('user');
+        console.log(username);
+
+        // Task 6
+        const my_object={
+            name:"Tarun",
+            Branch:"Iot",
+            Rollno:52,
+            email:"tarun79767@gmail.com"
+        }
+        sessionStorage.setItem('my_object',JSON.stringify(my_object));
+        const data=JSON.parse(sessionStorage.getItem('my_object'));
+        console.log(data);
+    </script>
+</body>
+</html>
