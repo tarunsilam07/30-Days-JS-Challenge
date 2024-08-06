@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Storing</title>
+</head>
+<body>
+    <form class="form">
+        <label>Name</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label>Email</label><br>
+        <input type="email" name="email" id="email"><br>
+        <label>Phone Number</label><br>
+        <input type="number" name="number" id="number"><br>
+        <label>Password</label><br>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+    <div id="display"></div>
+    <script>
+        // Task 7
+        function display() {
+            const div = document.getElementById('display');
+            const retrieval = JSON.parse(sessionStorage.getItem('userdata'));
+            if (retrieval) {
+                div.innerHTML = `
+                    <p>Name: ${retrieval.name}</p>
+                    <p>Email: ${retrieval.email}</p>
+                    <p>Phone Number: ${retrieval.number}</p>`;
+            } else {
+                div.innerHTML = `<p>No data found</p>`;
+            }
+        }
+
+    
+        const submit = document.getElementById('submit');
+        submit.addEventListener('click', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const number = document.getElementById('number').value;
+            const pass = document.getElementById('password').value;
+            const userdata = { name, email, number, pass };
+            sessionStorage.setItem('userdata', JSON.stringify(userdata));
+            display();
+        });
+
+    
+        document.addEventListener('DOMContentLoaded', display);
+
+        // Task 8
+        console.log("Before Removal");
+        
+        sessionStorage.setItem('user1',"tarun");
+        sessionStorage.setItem('user2',"dhoni");
+        sessionStorage.setItem('user3',"kohli");
+        sessionStorage.setItem('user4',"rohit")
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            console.log(`${key}: ${sessionStorage.getItem(key)}`);
+        }
+
+        console.log("After Removal");
+        
+        sessionStorage.removeItem('user1');
+        for (let i = 0; i < sessionStorage.length; i++) {
+            let key = sessionStorage.key(i);
+            console.log(`${key}: ${sessionStorage.getItem(key)}`);
+        }       
+    </script>
+</body>
+</html>
