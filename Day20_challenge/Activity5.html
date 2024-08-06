@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Session</title>
+</head>
+<body>
+    <script>
+        // Task 9
+        function store(key,value){
+            localStorage.setItem(key,value);
+            sessionStorage.setItem(key,value);
+            const local=localStorage.getItem(key);
+            const Session=sessionStorage.getItem(key);
+
+            console.log(`Local Storage key value : ${local}`);
+            console.log(`Session Storage key value : ${Session}`);
+        }
+        store("Finisher","Dhoni");
+        store("Opener","Kohli");
+        store("Allrounder","Jadeja");
+
+        // Task 10;
+        function check(){
+            localStorage.clear();
+            sessionStorage.clear();
+            if(localStorage.length==0){
+                console.log("Local Storage is empty");
+            }
+            else console.log("Local Storage is not empty");
+            
+            if(sessionStorage.length==0){
+                console.log("Session Storage is empty");
+            }
+            else console.log("Session Storage is not empty");
+            
+        }
+        check();
+    </script>
+</body>
+</html>
