@@ -48,6 +48,8 @@ console.log(first_val);
 //assigning value to const
 const constant=37
 console.log(constant);
+console.log("assam");
+
 //reassigning value to const
 //constant=52 --> ERROR :- Assignment to constant variable
 
